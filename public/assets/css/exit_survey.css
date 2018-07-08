@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.exit-surveys .panel-title { letter-spacing: 1px; }
+.exit-surveys .panel-title-icon i { font-size: 30px !important; margin-top: 10px; }
+#exit_survey_scores>div { display: inline-block; padding: 5px 10px; }
+#exit_survey_scores>div>img,
+#exit_survey_scores>div>div { display: inline-block; vertical-align: middle; }
+
+#exit_survey_scores>div>img { margin-right: 13px; }
+#exit_survey_scores>div>div { font-weight: bold; }
+
+.exit-surveys .title-right { background-color: transparent !important; padding: 0px 5px; }
+.exit-surveys .select1 {
+	-webkit-appearance:none;
+	border: 1px solid #fff;
+	color: #fff;
+	background-color: #0f6d7b;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	padding: 5px 35px 5px 15px;
+	font-size: 14px;	
+	background: #0f6d7b url(../images/dropdown_arrow2.png) no-repeat 93% 48%;
+	line-height: 18px;
+}
