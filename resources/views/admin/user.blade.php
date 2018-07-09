@@ -81,77 +81,78 @@
         <h5 class="modal-title">เพิ่มผู้ใช้ประเภทลูกค้า</h5>
       </div>
       <div class="modal-body">
-         <div class="modal-body">
+       <div class="modal-body">
         <div class="form-group">
           <label for="user">ชื่อ</label>
-          <input type="text" class="form-control" id="user" placeholder="ชื่อ" name="email">
+          <input type="text" class="form-control" ng-model="name" placeholder="ชื่อ" name="email">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" ng-model="email" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
           <label for="pwd">รหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="รหัสผ่าน" name="pwd">
+          <input type="password" ng-model="password" class="form-control" placeholder="รหัสผ่าน" name="pwd">
         </div>
         <div class="form-group">
           <label for="pwd">ยืนยังรหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="ยืนยังรหัสผ่าน" name="pwd">
+          <input type="password" ng-model="form.confirm_password" class="form-control" placeholder="ยืนยังรหัสผ่าน" name="pwd">
         </div>
 
-         <div class="form-group">
-            <label>
-            <input type="checkbox" ng-model="form.active" ng-change="myFunc(form.active)" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
-            <span ng-if="active == 1" class="label bg-success heading-text">จ่ายแล้ว</span>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" ng-model="form.active_user" ng-true-value="1" ng-false-value="0" /> <span ng-if="active_user == 0" class="label bg-danger-400 heading-text">อนุญาต</span>
+            <span ng-if="active_user == 1" class="label bg-success heading-text">ไม่อนุญาต</span>
           </label>
         </div>
       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-link"> <i class="icon-cross2"></i> ยกเลิก</button>
-        <button type="submit" class="btn  bg-slate-800"> <i class="icon-floppy-disk"></i> ยืนยัน</button>
-      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn btn-link"> <i class="icon-cross2"></i> ยกเลิก</button>
+      <button type="button" ng-click="submit(form)"class="btn  bg-slate-800"> <i class="icon-floppy-disk"></i> ยืนยัน</button>
     </div>
   </div>
+</div>
 </div>
 
 
 <div id="form_admin" class="modal fade">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
-      <div class="modal-header bg-primary">
-        <button type="button" data-dismiss="modal" class="close">×</button>
-        <h5 class="modal-title">เพิ่มผู้ใช้ประเภทผู้ดูแลระบบ</h5>
-      </div>
-       <div class="modal-body">
-        <div class="form-group">
-          <label for="user">ชื่อ</label>
-          <input type="text" class="form-control" id="user" placeholder="ชื่อ" name="email">
+      <form ng-submit="submit_admin(form)">
+        <div class="modal-header bg-primary">
+          <button type="button" data-dismiss="modal" class="close">×</button>
+          <h5 class="modal-title">เพิ่มผู้ใช้ประเภทผู้ดูแลระบบ</h5>
         </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="form-group">
-          <label for="pwd">รหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="รหัสผ่าน" name="pwd">
-        </div>
-        <div class="form-group">
-          <label for="pwd">ยืนยังรหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="ยืนยังรหัสผ่าน" name="pwd">
-        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="user">ชื่อ</label>
+            <input type="text" class="form-control" ng-model="form.name" placeholder="ชื่อ" name="email">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" ng-model="form.email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">รหัสผ่าน:</label>
+            <input type="password" class="form-control" ng-model="form.password" placeholder="รหัสผ่าน" name="pwd">
+          </div>
+          <div class="form-group">
+            <label >ยืนยังรหัสผ่าน:</label>
+            <input type="password" class="form-control" ng-model="form.confirm_password" placeholder="ยืนยังรหัสผ่าน" name="pwd">
+          </div>
 
-         <div class="form-group">
+          <div class="form-group">
             <label>
-            <input type="checkbox" ng-model="form.active" ng-change="myFunc(form.active)" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
-            <span ng-if="active == 1" class="label bg-success heading-text">จ่ายแล้ว</span>
-          </label>
+              <input type="checkbox" ng-model="form.active_admin" ng-true-value="1" ng-false-value="0" /> อนุญาตใช้
+            </label>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-link"> <i class="icon-cross2"></i> ยกเลิก</button>
-        <button type="submit" class="btn  bg-slate-800"> <i class="icon-floppy-disk"></i> ยืนยัน</button>
-      </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-link"> <i class="icon-cross2"></i> ยกเลิก</button>
+          <button type="submit" class="btn  bg-slate-800"> <i class="icon-floppy-disk"></i> ยืนยัน</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -163,27 +164,27 @@
         <button type="button" data-dismiss="modal" class="close">×</button>
         <h5 class="modal-title">เพิ่มผู้ใช้ประเภท ทำครัว</h5>
       </div>
-       <div class="modal-body">
+      <div class="modal-body">
         <div class="form-group">
           <label for="user">ชื่อ</label>
-          <input type="text" class="form-control" id="user" placeholder="ชื่อ" name="email">
+          <input type="text" class="form-control" placeholder="ชื่อ" name="email">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
           <label for="pwd">รหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="รหัสผ่าน" name="pwd">
+          <input type="password" class="form-control" placeholder="รหัสผ่าน" name="pwd">
         </div>
         <div class="form-group">
           <label for="pwd">ยืนยังรหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="ยืนยังรหัสผ่าน" name="pwd">
+          <input type="password" class="form-control" placeholder="ยืนยังรหัสผ่าน" name="pwd">
         </div>
 
-         <div class="form-group">
-            <label>
-            <input type="checkbox" ng-model="form.active" ng-change="myFunc(form.active)" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" ng-model="form.active" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
             <span ng-if="active == 1" class="label bg-success heading-text">จ่ายแล้ว</span>
           </label>
         </div>
@@ -206,24 +207,24 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="user">ชื่อ</label>
-          <input type="text" class="form-control" id="user" placeholder="ชื่อ" name="email">
+          <input type="text" class="form-control" placeholder="ชื่อ" name="email">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
           <label for="pwd">รหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="รหัสผ่าน" name="pwd">
+          <input type="password" class="form-control" placeholder="รหัสผ่าน" name="pwd">
         </div>
         <div class="form-group">
           <label for="pwd">ยืนยังรหัสผ่าน:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="ยืนยังรหัสผ่าน" name="pwd">
+          <input type="password" class="form-control" placeholder="ยืนยังรหัสผ่าน" name="pwd">
         </div>
 
-         <div class="form-group">
-            <label>
-            <input type="checkbox" ng-model="form.active" ng-change="myFunc(form.active)" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" ng-model="form.active" ng-true-value="1" ng-false-value="0" /> <span ng-if="active == 0" class="label bg-danger-400 heading-text">ยังไม่ได้จ่าย</span>
             <span ng-if="active == 1" class="label bg-success heading-text">จ่ายแล้ว</span>
           </label>
         </div>
