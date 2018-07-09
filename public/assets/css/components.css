@@ -16435,9 +16435,9 @@ thead .htCollapseButton:after {
   clear: both;
   height: 0;
 }
-.dataTables_wrapper .table-bordered {
+/*.dataTables_wrapper .table-bordered {
   border-top: 0;
-}
+}*/
 .dataTables_wrapper + .panel-body {
   border-top: 1px solid #ddd;
 }
@@ -16478,12 +16478,12 @@ thead .htCollapseButton:after {
   padding-left: 0;
   padding-right: 0;
 }
-.datatable-header {
+/*.datatable-header {
   border-bottom: 1px solid #ddd;
-}
-.datatable-footer {
+}*/
+/*.datatable-footer {
   border-top: 1px solid #bbb;
-}
+}*/
 .dataTables_length {
   float: right;
   display: inline-block;

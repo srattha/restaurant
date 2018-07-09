@@ -12,7 +12,7 @@
 	<link href="{{ asset('assets/css/core.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('assets/css/colors.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+	<!-- <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css"> -->
 	<link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" type="text/css">
 	<!-- <link rel="shortcut icon" href="../../images/bca/logo.png"> -->
 	<!-- /global stylesheets -->

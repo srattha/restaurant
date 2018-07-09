@@ -6,32 +6,79 @@ app.controller('UsersController', function ($scope, $http, $timeout, dataService
    if (switch_active) {
     $("input[ng-model='form.active']").siblings().remove();
   }
-  if (data == 1) {
-
-    switch_active = new Switchery(document.querySelector("input[ng-model='form.active_user']"));
-    $("#form_customer").modal("show");
-  }else if (data == 2) {
-    switch_active = new Switchery(document.querySelector("input[ng-model='form.active_admin']"));
-    $("#form_admin").modal("show");
-  }else if (data == 3) {
-    switch_active = new Switchery(document.querySelector("input[ng-model='form.active']"));
-    $("#form_kitchen").modal("show");
-
-  }else if (data == 4) {
-    switch_active = new Switchery(document.querySelector("input[ng-model='form.active']"));
-    $("#form_manager").modal("show");
+  if (data) {
+    $scope.form = data;
+    if ($scope.form.active) {
+      $("input[ng-model='form.active']").prop('checked', true);
+    } else {
+      $("input[ng-model='form.active']").prop('checked', false);
+    }
   }
-        // switch_active = new Switchery(document.querySelector("input[ng-model='form.active']"));
-      }
+  switch_active = new Switchery(document.querySelector("input[ng-model='form.active']"));
+  $("#form").modal("show");
+
+  setTimeout(function(){
+    $("#type").change();
+  },750)
+  
+}
 
 
 
-      $scope.submit_admin = function(data){
-        console.log(data);
-      }
+$scope.submit = function(data){
+  console.log(data);
+  if($scope.form.password != $scope.form.passwordConfirm){
+    swal({
+      title: "Oops...",
+      text: "รหัสไม่ตรงกัน!",
+      confirmButtonColor: "#EF5350",
+      type: "error"
+    });
+    return;    
+  }
+//   var admin = {"id":data.id,"email":data.email,"users_type_id":data.users_type_id,
+//   "name":data.name,"password":data.password
+// }
+dataService.putData("/api/v1/admin", data).then(function (res) {
+  if(res.data.status){
+    fn.alertSuccess();
+    list();
+    $('#form').modal('hide');
+  }else{
+    fn.alertError();
+  }
+}).catch(err => {
+  fn.alertError(err.statusText)
+})
+}
+
+function list() {
+
+  dataService.postData("/api/v1/admin").then(res => {
+    $scope.lists = res.data.result;
+    $('#dataTable').DataTable().destroy();
+    setTimeout(function() {
+      fn.makeDataTable($('#dataTable'),[]);
+    }, 200);
+  }).catch(err => {
+    fn.alertError(err.statusText)
+  })
+}
 
 
-    })
+
+
+function init() {
+  list();
+
+}
+
+init();
+
+
+
+
+})
 
 
 

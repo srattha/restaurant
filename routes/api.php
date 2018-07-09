@@ -35,10 +35,13 @@ Route::post("v1/media/delete","Api\MediaController@delete");
 
 
 #admin
-Route::post("v1/admin","Api\AdminController@lists");
-Route::put("v1/admin","Api\AdminController@add");
-Route::post("v1/admin/delete","Api\AdminController@delete");
-Route::post("v1/admin/view","Api\AdminController@view");
-Route::post("v1/admin/update","Api\AdminController@updateProfile");
-Route::put("/v1/admin/status","Api\AdminController@update_status");
-Route::put("v1/admin/update/password","Api\AdminController@changePassword");
+ //Route::post("v1/admin","Api\AdminController@lists");
+// Route::put("v1/admin","Api\AdminController@add");
+// Route::post("v1/admin/delete","Api\AdminController@delete");
+// Route::post("v1/admin/view","Api\AdminController@view");
+// Route::post("v1/admin/update","Api\AdminController@updateProfile");
+// Route::put("/v1/admin/status","Api\AdminController@update_status");
+// Route::put("v1/admin/update/password","Api\AdminController@changePassword");
+#user
+Route::post("v1/admin","Api\UsersController@lists");
+Route::put("v1/admin","Api\UsersController@add");

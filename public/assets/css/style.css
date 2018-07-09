@@ -331,7 +331,7 @@ span.dtr-data > ul > li > ul{
 
 #dataTable > tbody > tr > td:nth-child(1){
   min-width: 230px;
-  display: flex;
+/*  display: flex;*/
 }
 
 .img-preview{

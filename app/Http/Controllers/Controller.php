@@ -23,6 +23,9 @@ class Controller extends BaseController
       'status' => "400 Bad Request"
       ], 400);
   }
+   public function Response($status = NULL, $message = NULL, $data = NULL){
+      return $status = ["status"=>$status, "message"=>$message, "data"=>$data];
+    }
   public function RespondSuccessRequest($arr=NULL){
     $data = [
     'status' => true,
