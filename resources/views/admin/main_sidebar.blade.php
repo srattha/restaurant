@@ -8,13 +8,13 @@
 			<div class="category-content no-padding">
 				<ul class="navigation navigation-main navigation-accordion">
 					<li>
-						<a href="/user"><i class="icon-user-lock"></i>จัดการสมาชิก</a>
+						<a href="/user"><i class="icon-user-lock"></i>จัดการข้อมูลผู้ใช้</a>
 					</li>
 
 					<li>
 						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="icon-cart5"></i>จัดการเมนูอาหาร</a>
 						<ul class="collapse list-unstyled" id="homeSubmenu">
-							<li><a href="/all_menus"><i class="icon-file-empty"></i>จัดการเมนูอาการทั้งหมด</a></li>
+							<li><a href="/all_menus"><i class="icon-file-empty"></i>จัดการเมนูอาหารทั้งหมด</a></li>
 							<li>
 								<a href="/recommended_menu"><i class="icon-file-text2"></i>จัดการเมนูอาหารแนะนำ</a>
 							</li>

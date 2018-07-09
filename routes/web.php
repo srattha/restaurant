@@ -14,10 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Auth::routes();
-// Route::group(['middleware' => ['web']], function () {
-	
-// });
 // Admin
 Route::get('/admin', 'AdminController@admin')->name('admin');
 Route::get('/media_group', 'AdminController@media_group')->name('media_group');
@@ -30,3 +26,6 @@ Route::get('/table','AdminController@table')->name('table');
 Route::get('/report','AdminController@report')->name('report');
 Route::get('/all_menus', 'AdminController@all_menus')->name('all_menus');
 	//  End Admin
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

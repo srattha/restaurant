@@ -190,8 +190,5 @@ th{
 
 @endsection
 @section('script')
-<script type="text/javascript">
-
-</script>
 <script type="text/javascript" src="{{ asset('assets/js/angular/controller/ReservationsController.js') }}"></script>
 @endsection
