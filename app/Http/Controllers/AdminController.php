@@ -64,6 +64,9 @@ class AdminController extends Controller
 	 public function report(){
         return view('admin.report');
     }
+    public function all_menus(){
+    	return view('admin.all_menus');
+    }
 
 
 }

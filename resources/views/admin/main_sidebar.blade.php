@@ -10,8 +10,15 @@
 					<li>
 						<a href="/user"><i class="icon-user-lock"></i>จัดการสมาชิก</a>
 					</li>
+
 					<li>
-						<a href="/recommended_menu"><i class="icon-file-text2"></i>จัดการเมนูอาหารแนะนำ</a>
+						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="icon-cart5"></i>จัดการเมนูอาหาร</a>
+						<ul class="collapse list-unstyled" id="homeSubmenu">
+							<li><a href="/all_menus"><i class="icon-file-empty"></i>จัดการเมนูอาการทั้งหมด</a></li>
+							<li>
+								<a href="/recommended_menu"><i class="icon-file-text2"></i>จัดการเมนูอาหารแนะนำ</a>
+							</li>
+						</ul>
 					</li>
 					<li>
 						<a href="/media_group"> <i class=" icon-image2"></i>จัดการรูปภาพ</a>

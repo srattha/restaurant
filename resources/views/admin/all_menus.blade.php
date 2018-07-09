@@ -4,7 +4,7 @@
 @section('content')
 <div class="panel" ng-controller="DeviceController">
   <div class="panel-heading bg-primary">
-    <h1 class="panel-title text-semibold">เมนูอาหารแนะนำ</h1>
+    <h1 class="panel-title text-semibold">เมนูอาหารทั้งหมด</h1>
     <div class="heading-elements">
      <!-- <button class="btn bg-cakebox-2" ng-click="modaldevicelog()"><i class="icon-plus-circle2"></i> Devicelog</button> -->
      <button class="btn bg-slate-800" ng-click="modal()"><i class="icon-plus-circle2"></i> เพิ่ม</button>
@@ -74,6 +74,7 @@
  </table>
 </div>
 </div>
+
 
 
 
